@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Examples for Valid.js</title>
+<link href="static/h-ui/css/H-ui.css" rel="stylesheet" type="text/css" />
+<link href="static/h-ui/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="Lib/jquery.min.js"></script> 
+<script type="text/javascript" src="lib/valid.js"></script>
+<!--自己的样式-->
+<!--[if IE 6]>
+    <script type="text/javascript" src="Lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script>DD_belatedPNG.fix('.pngfix,.icon');</script>
+<![endif]-->
+</head>
+<body>
+<div class="wp cl mt-15 f-14">
+	<form id="validForm">
+	<table class="table table-border table-bordered table-striped">
+		<thead>
+			<tr>
+				<th width="20%">name</th>
+			<th>value</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>username:</td>
+				<td><input type="text" placeholder="value" class="input_text radius" valid="errForm" data-type="user"></td>
+			</tr>
+			<tr>
+				<td>password:</td>
+				<td><input type="text" placeholder="value" class="input_text radius" valid="errForm" data-type="user"></td>
+			</tr>
+			<tr>
+				<td>phone:</td>
+				<td><input type="text" placeholder="value" class="input_text radius" valid="errForm" data-type="user"></td>
+			</tr>
+			<tr>
+				<td>address:</td>
+				<td><input type="text" placeholder="value" class="input_text radius" valid="errForm" data-type="user"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input class="btn btn-default" type="button" onclick="check();" value="submit"></td>
+			</tr>
+		</tbody>
+	</table>
+	</form>
+</div>
+</body>
+<script>
+var valid = CloudValid;
+valid.main.init("validForm");
+function checkForm(){
+	valid.main.checkAll("validForm");
+	if(valid.Checked){
+		$('#validForm').submit();
+	}
+}
+</script>
+</html>
